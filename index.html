@@ -180,7 +180,7 @@ async function sendMessage() {
 
     const data = await response.json();
     console.log("📦 Réponse reçue de N8N :", data);
-    const reply = data.reply || "Jarvis n'a rien à dire. Rare mais possible, monsieur Mickael.";
+    const reply = data.reply || data.output || "Problème de réception de réponses, Monsieur Mickael.";
     messages.innerHTML += `<div class="chat-bubble-wrapper" style="justify-content: flex-start;"><span class="chat-bubble bot-bubble">${reply}</span></div>`;
     messages.scrollTop = messages.scrollHeight;
 
